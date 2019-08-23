@@ -5,4 +5,10 @@
     <p align="center">{% trans 'Please try again' %}</p>
 <br/>
 </div>
+    {{ if extra_info }}
+<div class="w3-panel w3-border w3-border-red w3-round-xlarge w3-hover-border-blue w3-justify">
+    <p align="center">{{ extra_info }}</p>
+<br/>
+</div>
+    {% endif %}
 {% endblock %}

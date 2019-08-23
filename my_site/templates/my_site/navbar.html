@@ -1,5 +1,5 @@
 <div id="navbar" class="w3-red navbar">
-    <div id="ishow-navbar" class="navbar w3-bar">
+    <div class="navbar w3-bar">
         {% load i18n %}
         <a href="{% url 'my_site:base' %}" class="navbar-item w3-bar-item w3-button w3-cyan show-me">{%trans 'Activities' %}</a>
         {% for type in activity_types %}
