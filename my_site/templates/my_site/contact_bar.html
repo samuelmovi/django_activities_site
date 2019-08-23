@@ -1,0 +1,14 @@
+  <div id="contact-bar" class="contact-bar" >
+	<div id="ishow-contact-bar" class="contact-bar w3-bar">
+		<a target="_blank" class="w3-bar-item w3-left w3-hover-green show-me" href="https://www.tripadvisor.com/Attraction_Review-g187443-d7108625-Reviews-IshowU_Sevilla-Seville_Province_of_Seville_Andalucia.html">
+		<img class="w3-image" src="https://www.tripadvisor.com/img/cdsi/img2/branding/socialWidget/20x28_green-21693-2.png"/> #1 Flamenco Lessons </a>
+	{% if all_contacts %}
+		{% for contact in all_contacts %}
+		<a href="{{contact.link}}" class="w3-bar-item  w3-hover-cyan" target="_blank" title="{{contact.text}}"><i class="{{contact.icon}}"></i></a>
+		{% endfor %}
+	{% endif %}
+		<a href="javascript:void(0);" class="w3-bar-item contact-burger w3-hover-cyan" onclick="fold_contact_buttons();">
+		<i class="fa fa-bars"></i>
+		</a>
+	</div>
+  </div>

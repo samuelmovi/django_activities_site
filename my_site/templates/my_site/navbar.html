@@ -1,0 +1,32 @@
+<div id="navbar" class="w3-red navbar">
+    <div id="ishow-navbar" class="navbar w3-bar">
+        {% load i18n %}
+        <a href="{% url 'sevilla:base' %}" class="navbar-item w3-bar-item w3-button w3-cyan show-me">{%trans 'Experiences' %}</a>
+        {% for type in experience_types %}
+        <div class="navbar-item w3-dropdown-hover">
+          <button class="w3-button w3-hover-cyan">{{type.type}}</button>
+          <div class="w3-dropdown-content w3-bar-block">
+          {% if all_experiences %}
+            {% for experience in all_experiences %}
+              {% if experience.type == type.type %}
+                <a href="{% url 'sevilla:experience' experience.lang experience.type experience.name %}"
+                   class="w3-bar-item" ><p>{{ experience.name }}</p></a>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+        {% if all_pages %}
+        {% for page in all_pages %}
+        {% if page.name != 'home' and page.name != 'inicio' and page.name != 'general-conditions' and page.name != 'condiciones-generales' %}
+        <a href="/{{page.name}}/" class="navbar-item w3-bar-item w3-button w3-hover-cyan">{{page.name}}</a>
+        {% endif %}
+        {% endfor %}
+        <a href="{% url 'sevilla:contact' %}" class="navbar-item w3-bar-item w3-button w3-hover-cyan">{% trans 'Contact' %}</a>
+        {% endif %}
+        <a href="javascript:void(0);" class="w3-bar-item navbar-burger w3-hover-cyan" onclick="fold_nav_buttons()">
+			<i class="fa fa-bars"></i>
+		</a>
+    </div>
+</div>

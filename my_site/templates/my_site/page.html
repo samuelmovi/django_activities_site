@@ -1,0 +1,43 @@
+{% extends "sevilla/base.html" %}
+{% block content %}{% load i18n %}
+<div class="w3-panel w3-border w3-border-red w3-round-xlarge w3-hover-border-blue w3-justify" style="font-size:20px;">
+{% if page %}
+{{ page.text }}
+{% endif %}
+<br/>{% load i18n %}
+</div>
+{% if home %}
+<br/>
+{% if excerpts %}
+<!-- CARD GRID -->
+<h2>{% trans 'Experience Selection' %}</h2>
+{% for excerpt in excerpts %}
+{% if forloop.counter == 1 or forloop.counter == 4 %}
+<!-- NEW ROW -->
+<div class="w3-row ">
+{% endif %}
+<!-- NEW CARD -->
+<div class="w3-third w3-border w3-hover-border-red w3-pale-red " >
+    <img class="w3-image" src="{% if excerpt.image %}{{ excerpt.image.url }}{% endif %}" alt="{{ excerpt.title }}">
+    <button class="w3-button w3-block w-red w3-hover-red card-button" onclick="document.getElementById('card_view{{forloop.counter}}').style.display='block'" >{{ excerpt.title }}</button>
+</div>
+<div id="card_view{{forloop.counter}}" class="w3-modal w3-display-container">
+  <div class="w3-modal-content w3-card-4 w3-display-middle">
+   <header class="w3-container w3-teal">
+   <span onclick="document.getElementById('card_view{{forloop.counter}}').style.display='none'"
+         class="w3-button w3-display-topright">&times;</span>
+     <h2>{{ excerpt.title }}</h2>
+   </header>
+  <div class="w3-container card-modal-text">{{ excerpt.text|safe }}</div>
+   <footer class="w3-container w3-teal card-modal-link">
+     <a href="{{ excerpt.link }}" >{% trans 'More Info' %}</a>
+   </footer>
+  </div>
+</div>
+{% if forloop.counter == 3 or forloop.counter == 6 %}
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endif %}
+{% endblock %}

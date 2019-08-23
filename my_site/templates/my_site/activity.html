@@ -1,0 +1,22 @@
+{% extends "sevilla/base.html" %}
+{% block content %}
+<!-- EXPERIENCE -->
+{% if experience %}
+<h2>{{ experience.title }}</h2>
+<div id="summary" class="w3-panel w3-border w3-border-red w3-round-xlarge w3-hover-border-blue w3-justify">
+{% if experience.summary %}
+{{ experience.summary|safe }}
+{% endif %}
+<br/>
+</div>
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+<h2 align="center">{% trans 'Details' %}</h2>
+<div id="details" class="w3-panel w3-border w3-border-red w3-round-xlarge w3-hover-border-blue w3-justify">
+{% if experience.details %}
+{{ experience.details|safe }}
+{% endif %}
+<br/>
+</div>
+{% endif %}
+{% endblock %}
