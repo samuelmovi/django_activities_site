@@ -1,7 +1,5 @@
-# Django Activity Site
-This is a Django-based web application for the management of personal book collections.
-
-It supports multiple users, keeping track of their book collection, the locations of these books, and any book loans.
+# Django Activities Site
+This is a Django-based web application suitable for showcase. It's designed as a single-column commercial website for activities, but easily customizable
 
 It's also multilingual, currently with support for English(default) and Spanish.
 
@@ -13,48 +11,32 @@ For use in development, it required the following:
 - Postgresql docker image: `docker pull postgres:alpine`
 - Postgresql client: `sudo apt install postgresql-client`
 
+## Layout
+- Contact bar: situated at the top, and populated with Contact entities. Sticky, collapsible, responsive.
+- Carousel: a photo slide-show, populated with CarouselPhotos instances linked to the Page or Experience requested.
+- Navigation Bar: first it shows links to all experiences, organized in dropdown-per-type, then all pages.
+- Content 
+- Footer: good place to put a contact form
+
+## Models
+There are 5 models in the app.
+
+### Page
+It has text field, which is displayed inside a frame
+
+### Activity
+It has a summary field, where the info on the activity in question, and a details field for all the minutia.
+
+### Contact
+Social media, email and telephone, with customized icons and links
+
+### CarouselPhoto
+If photos are loaded to the rendered template they will be rendered between the top contact bar and the navigation bar. For both Pages and Activities.
+
+### Excerpt
+The home page displays a grid of cards for curated content. When clicked a modal with an excerpt on the activity will be shown, with a link to the respective activity.
 
 ## Usage
-- Registration: can be done either through exposing the sign-up page or by the admin page
-- Home page: users are redirected here after a succesful login, or by clicking on the upper right-hand corner of 
-every page. It includes a summary of their book collection, and active loans.
-
-
-## Page Descriptions
-
-### Home
-The home page (`/`) shows a summary of the user's book collection and their outstanding loans.
-
-### Books
-The main books page (`/books/`) shows a list of all books registered to that user in the database.
-
-It exposes the following links at the bottom:
-
-- `/books/new/`: shows a form to create a new book entry. No mandatory fields (for the time being).
-- `/books/modify/`: shows a list of all the book entries for the user (with radio buttons). Choosing an entry and 
-clicking the button below the list takes you to a filled-out book form, where info can be modified, and saved by 
-clicking the `Modify Book` button.
-
-
-### Locations
-The main locations page (`/locations/`) shows a list of all locations registered by that user.
-
-It exposes the following links at the bottom:
-
-- `/locations/new/`: it shows a form to create a new location entry for that user
-- `/locations/delete`: it shows a list of all location entries for that user in the database (with radio buttons) and
- a button to delete the entry from the database.
-
-
-### Loans
-The main loans page (`/loans/`) shows a list of all loans in the database for that user, whether they have been returned or not.
-
-It exposes the following links at the bottom:
-
-- `/loans/loan/`: shows a list of all non-loaned books for that user (with radio buttons), a field for the borrower's 
-name and a `Loan This Book` button.
-- `/loans/return/`: shows a list of the user's active loans (with radio buttons) and a button to set the book as 
-returned (`Book.loaned = False`)
 
 ## Steps
 The included `STEPS.md` file is a compendium of the steps necessary to bring this project to a working order.
