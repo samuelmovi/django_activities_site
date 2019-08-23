@@ -27,59 +27,38 @@ DATABASES = {
 
 ## APP SETUP
 - Create app: `python manage.py startapp my_site`
-- Add `'sevilla.apps.MySiteConfig',` to `INSTALLED_APPS` in settings.py
-- Kill the db container if still running: `sudo docker stop django-db`
-- Start web app with `./init.sh` (make executable with `chmod +x init.sh`)
+- Add `'my_site.apps.MySiteConfig',` to `INSTALLED_APPS` in settings.py
+- Create file `my_site/urls.py`
 - In `django_activities_site/urls.py` add `path('', include('my_site.urls')),` to urlpatterns
 
 ## MODELS
 - Populate models in `my_site/models.py`
 
-- Make migrations:
-```bash
-python manage.py makemigrations my_site
-python manage.py migrate
-
-```
-- Make models available to admin user, edit my_site/admin.py
+- Make models available to admin user, edit `my_site/admin.py`
 ```pythonstub
 from .models import *
 
 admin.site.register(Page)
-admin.site.register(Experience)
+admin.site.register(Activity)
 admin.site.register(Contact)
+admin.site.register(CarouselPhoto)
+admin.site.register(Excerpt)
 
 ```
+
+## FORMS
+Create and populate `my_site/forms.py`
+
 
 ## VIEWS
-- Create views:
-```pythonstub
-from django.views import View
+- Populate `my_site/views.py`
+- Populate `my_site/urls.py`
 
-def home(request):
-	pass
-
-class PageView(View):
-    def get(self, request):
-        pass
-
-
-class ExperienceView(View):
-    def get(self, request):
-        pass
-
-```
-- Create file `sevilla/urls.py`:
-```pythonstub
-from django.urls import path
-from . import views
-
-app_name = 'sevilla'
-urlpatterns = [
-	path('', views.home, name='home'),
-    path('experience/<path:experience.name>/', views.ExperienceView.as_view(), name='experience'),
-    path('<path:page.name>/', views.PageView.as_view(), name='page'),
-]
+## MIGRATION
+Now that models views, and urls are populated:
+```bash
+python manage.py makemigrations my_site
+python manage.py migrate
 
 ```
 
