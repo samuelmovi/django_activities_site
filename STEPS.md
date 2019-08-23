@@ -26,22 +26,22 @@ DATABASES = {
 - Create admin user: `python manage.py createsuperuser`
 
 ## APP SETUP
-- Create app: `python manage.py startapp site`
-- Add `'sevilla.apps.SiteConfig',` to `INSTALLED_APPS` in settings.py
+- Create app: `python manage.py startapp my_site`
+- Add `'sevilla.apps.MySiteConfig',` to `INSTALLED_APPS` in settings.py
 - Kill the db container if still running: `sudo docker stop django-db`
 - Start web app with `./init.sh` (make executable with `chmod +x init.sh`)
-- In `django_activities_site/urls.py` add `path('', include('site.urls')),` to urlpatterns
+- In `django_activities_site/urls.py` add `path('', include('my_site.urls')),` to urlpatterns
 
 ## MODELS
-- Populate models in `site/models.py`
+- Populate models in `my_site/models.py`
 
 - Make migrations:
 ```bash
-python manage.py makemigrations sevilla
+python manage.py makemigrations my_site
 python manage.py migrate
 
 ```
-- Make models available to admin user, edit sevilla/admin.py
+- Make models available to admin user, edit my_site/admin.py
 ```pythonstub
 from .models import *
 
