@@ -1,4 +1,4 @@
-echo '[#] Starting MySQL database container: django-db...'
+echo '[#] Starting PostgreSQL database container: django-db...'
 sudo docker run --rm --name django-db -e POSTGRES_PASSWORD=mysecretpassword -v $PWD/db:/var/lib/postgresql/data -d postgres:alpine
 
 echo '[#] Waiting 5 seconds for DB initialization...'

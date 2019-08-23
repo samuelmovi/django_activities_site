@@ -68,6 +68,9 @@ python manage.py migrate
 ## STATIC FILES
 - In `my_site/` create folder `static/my_site/`
 
+## INITIALIZE
+Stop the database container if still running (`sudo docker stop django-db`), and execute `./init.sh`
+
 ## TRANSLATION
 - In folder `my_site/`, create `locale/`
 - Add `django.middleware.locale.LocaleMiddleware` to MIDDLEWARE in `settings.py`
