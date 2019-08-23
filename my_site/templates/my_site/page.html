@@ -1,4 +1,4 @@
-{% extends "sevilla/base.html" %}
+{% extends "my_site/base.html" %}
 {% block content %}{% load i18n %}
 <div class="w3-panel w3-border w3-border-red w3-round-xlarge w3-hover-border-blue w3-justify" style="font-size:20px;">
 {% if page %}
@@ -10,7 +10,7 @@
 <br/>
 {% if excerpts %}
 <!-- CARD GRID -->
-<h2>{% trans 'Experience Selection' %}</h2>
+<h2>{% trans 'Activity Selection' %}</h2>
 {% for excerpt in excerpts %}
 {% if forloop.counter == 1 or forloop.counter == 4 %}
 <!-- NEW ROW -->

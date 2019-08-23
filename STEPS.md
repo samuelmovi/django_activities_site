@@ -63,21 +63,19 @@ python manage.py migrate
 ```
 
 ## TEMPLATES
-- In `sevilla/` create folder `templates/sevilla/` and add emplate files
+- In `my_site/` create folder `templates/my_site/` and add emplate files
 
 ## STATIC FILES
-- In `sevilla/` create folder `static/sevilla/`
+- In `my_site/` create folder `static/my_site/`
 
 ## TRANSLATION
-- In folder `sevilla/`, create `locale/`
+- In folder `my_site/`, create `locale/`
 - Add `django.middleware.locale.LocaleMiddleware` to MIDDLEWARE in `settings.py`
-- Add `LOCALE_PATHS = (os.path.join(BASE_DIR, 'sevilla/locale/'),)` to MIDDLEWARE in `settings.py`
-- From `sevilla/` run: `django-admin makemessages -l es` [install gettext if required]
+- Add `LOCALE_PATHS = (os.path.join(BASE_DIR, 'my_site/locale/'),)` to MIDDLEWARE in `settings.py`
+- From `my_site/` run: `django-admin makemessages -l es` [install gettext if required]
 - execute `python manage.py compilemessages`
 
 
-## MIGRATION to IONOS
-- 
 
 
 

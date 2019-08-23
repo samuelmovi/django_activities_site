@@ -1,11 +1,11 @@
-{% extends "sevilla/base.html" %}
+{% extends "my_site/base.html" %}
 {% block content %}
 <!-- EXPERIENCE -->
-{% if experience %}
-<h2>{{ experience.title }}</h2>
+{% if activity %}
+<h2>{{ activity.title }}</h2>
 <div id="summary" class="w3-panel w3-border w3-border-red w3-round-xlarge w3-hover-border-blue w3-justify">
-{% if experience.summary %}
-{{ experience.summary|safe }}
+{% if activity.summary %}
+{{ activity.summary|safe }}
 {% endif %}
 <br/>
 </div>
@@ -13,8 +13,8 @@
 {% get_current_language as LANGUAGE_CODE %}
 <h2 align="center">{% trans 'Details' %}</h2>
 <div id="details" class="w3-panel w3-border w3-border-red w3-round-xlarge w3-hover-border-blue w3-justify">
-{% if experience.details %}
-{{ experience.details|safe }}
+{% if activity.details %}
+{{ activity.details|safe }}
 {% endif %}
 <br/>
 </div>

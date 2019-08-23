@@ -1,16 +1,16 @@
 <div id="navbar" class="w3-red navbar">
     <div id="ishow-navbar" class="navbar w3-bar">
         {% load i18n %}
-        <a href="{% url 'sevilla:base' %}" class="navbar-item w3-bar-item w3-button w3-cyan show-me">{%trans 'Experiences' %}</a>
-        {% for type in experience_types %}
+        <a href="{% url 'my_site:base' %}" class="navbar-item w3-bar-item w3-button w3-cyan show-me">{%trans 'Activities' %}</a>
+        {% for type in activity_types %}
         <div class="navbar-item w3-dropdown-hover">
           <button class="w3-button w3-hover-cyan">{{type.type}}</button>
           <div class="w3-dropdown-content w3-bar-block">
-          {% if all_experiences %}
-            {% for experience in all_experiences %}
-              {% if experience.type == type.type %}
-                <a href="{% url 'sevilla:experience' experience.lang experience.type experience.name %}"
-                   class="w3-bar-item" ><p>{{ experience.name }}</p></a>
+          {% if all_activities %}
+            {% for activity in all_activities %}
+              {% if activity.type == type.type %}
+                <a href="{% url 'my_site:activity' activity.lang activity.type activity.name %}"
+                   class="w3-bar-item" ><p>{{ activity.name }}</p></a>
               {% endif %}
             {% endfor %}
           {% endif %}
@@ -23,7 +23,7 @@
         <a href="/{{page.name}}/" class="navbar-item w3-bar-item w3-button w3-hover-cyan">{{page.name}}</a>
         {% endif %}
         {% endfor %}
-        <a href="{% url 'sevilla:contact' %}" class="navbar-item w3-bar-item w3-button w3-hover-cyan">{% trans 'Contact' %}</a>
+        <a href="{% url 'my_site:contact' %}" class="navbar-item w3-bar-item w3-button w3-hover-cyan">{% trans 'Contact' %}</a>
         {% endif %}
         <a href="javascript:void(0);" class="w3-bar-item navbar-burger w3-hover-cyan" onclick="fold_nav_buttons()">
 			<i class="fa fa-bars"></i>
