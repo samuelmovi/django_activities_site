@@ -87,11 +87,11 @@ To use it:
 ```
 python manage.py shell
 
-from feeder import Pages
-
+import feeder
 
 ```
 
+This should execute the code in it, and populate the fields. Feel free to modify it for your own use.
 
 
 
