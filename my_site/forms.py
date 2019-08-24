@@ -8,6 +8,6 @@ class ContactForm(forms.Form):
     arrival_date = forms.DateField(label=_('Date of arrival:'), widget=forms.SelectDateWidget())
     party_size = forms.IntegerField(label=_('Party size:'))
     reference = forms.CharField(label=_('How did you find us?'), max_length=100)
-    experiences = forms.CharField(label=_('What Experiences are you interested in?'),
+    experiences = forms.CharField(label=_('What Activities are you interested in?'),
                                   max_length=1000, widget=forms.Textarea)
 

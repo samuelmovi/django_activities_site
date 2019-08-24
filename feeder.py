@@ -1,6 +1,8 @@
 """
 Feed new contacts:
 
+"""
+
 from my_site.models import Contact
 
 all_contacts = [
@@ -57,7 +59,6 @@ for contact in all_contacts:
 	print("\t> {} saved".format(contact['name']))
 
 
-"""
 
 """
 Feed new pages:
@@ -67,39 +68,39 @@ Feed new pages:
 from my_site.models import Page
 
 all_pages = [
-	{
-		'name': 'home',
-		'title': 'Welcome',
-		'text': 'Welcome Text, Welcome Text, Welcome Text, Welcome Text, Welcome Text, Welcome Text, Welcome Text, Welcome Text, Welcome Text, Welcome Text, Welcome Text, Welcome Text, ',
-		'lang': 'en',
-	},
-	{
-		'name': 'inicio',
-		'title': 'Bienvenidos',
-		'text': 'Texto de bienvenida, Texto de bienvenida, Texto de bienvenida, Texto de bienvenida, Texto de bienvenida, Texto de bienvenida, Texto de bienvenida, ',
-		'lang': 'es',
-	},
-	{
-		'name': 'About me',
-		'title': 'About Me',
-		'text': 'Me me me me , Me me me me , Me me me me , Me me me me , Me me me me , Me me me me , Me me me me , Me me me me , ',
-		'lang': 'en',
-	},
-	{
-		'name': 'Sobre mi',
-		'title': 'Sobre mi',
-		'text': 'Mi mi mi mi , Mi mi mi mi , Mi mi mi mi , Mi mi mi mi , Mi mi mi mi , Mi mi mi mi , Mi mi mi mi , Mi mi mi mi , ',
-		'lang': 'es',
-	},
+    {
+        'name': 'home',
+        'title': 'Welcome',
+        'text': 'Welcome Text, Welcome Text, Welcome Text, Welcome Text, Welcome Text, Welcome Text, Welcome Text, Welcome Text, Welcome Text, Welcome Text, Welcome Text, Welcome Text, ',
+        'lang': 'en',
+    },
+    {
+        'name': 'inicio',
+        'title': 'Bienvenidos',
+        'text': 'Texto de bienvenida, Texto de bienvenida, Texto de bienvenida, Texto de bienvenida, Texto de bienvenida, Texto de bienvenida, Texto de bienvenida, ',
+        'lang': 'es',
+    },
+    {
+        'name': 'About me',
+        'title': 'About Me',
+        'text': 'Me me me me , Me me me me , Me me me me , Me me me me , Me me me me , Me me me me , Me me me me , Me me me me , ',
+        'lang': 'en',
+    },
+    {
+        'name': 'Sobre mi',
+        'title': 'Sobre mi',
+        'text': 'Mi mi mi mi , Mi mi mi mi , Mi mi mi mi , Mi mi mi mi , Mi mi mi mi , Mi mi mi mi , Mi mi mi mi , Mi mi mi mi , ',
+        'lang': 'es',
+    },
 ]
 
 for page in all_pages:
-	print("[#] Processing: {}".format(page['name']))
-	new_page = Page()
-	for key in page.keys():
-		new_page.__dict__[key] = page[key]
-	new_page.save()
-	print("\t> {} saved".format(page['name']))
+    print("[#] Processing: {}".format(page['name']))
+    new_page = Page()
+    for key in page.keys():
+        new_page.__dict__[key] = page[key]
+    new_page.save()
+    print("\t> {} saved".format(page['name']))
 
 
 

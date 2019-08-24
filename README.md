@@ -37,6 +37,8 @@ If photos are loaded to the rendered template they will be rendered between the 
 The home page displays a grid of cards for curated content. When clicked a modal with an excerpt on the activity will be shown, with a link to the respective activity.
 
 ## Usage
+If no pages named `home` or `inicio` exist, you will be redirected to an error page. Use the feeder script as 
+detailed in the STEPS file to automatically create the entries for you.
 
 ## Steps
 The included `STEPS.md` file is a compendium of the steps necessary to bring this project to a working order.
