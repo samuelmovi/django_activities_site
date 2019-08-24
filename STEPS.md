@@ -78,6 +78,19 @@ Stop the database container if still running (`sudo docker stop django-db`), and
 - From `my_site/` run: `django-admin makemessages -l es` [install gettext if required]
 - execute `python manage.py compilemessages`
 
+## FEEDER
+The way the app is set up, you will be redirected to an error page on first run. To avoid this you need home pages (`/home/` and `/inicio/`).
+Instead of using the admin interface, feel free to use my feeder script. It has custom dictionaries to automatically 
+add entries to the database.
+
+To use it:
+```
+python manage.py shell
+
+from feeder import Pages
+
+
+```
 
 
 
