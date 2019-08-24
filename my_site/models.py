@@ -23,20 +23,18 @@ class Page(models.Model):
 
 
 class Activity(models.Model):
-    FLAMENCO = 'Flamenco'
-    TRIANA = 'Triana'
-    CRAFTS = 'Crafts'
-    ARTESANIA = 'Artesania'
-    SPECIALTIES = 'Specialties'
-    ESPECIALIDADES = 'Especialidades'
+    type_1 = 'Type 1'
+    type_2 = 'Type 2'
+    type_3 = 'Type 3'
+    type_4 = 'Type 4'
+    type_5 = 'Type 5'
     
     CHOICES = (
-        (FLAMENCO, 'Flamenco'),
-        (TRIANA, 'Triana'),
-        (CRAFTS, 'Cratfs'),
-        (ARTESANIA, 'Artesania'),
-        (SPECIALTIES, 'Specialties'),
-        (ESPECIALIDADES, 'Especialidades'),
+        (type_1, 'Type 1'),
+        (type_2, 'Type 2'),
+        (type_3, 'Type 3'),
+        (type_4, 'Type 4'),
+        (type_5, 'Type 5'),
     )
     
     ENGLISH = 'en'

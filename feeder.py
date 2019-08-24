@@ -62,8 +62,9 @@ for contact in all_contacts:
 """
 Feed new pages:
 
-from my_site.models import Page
+"""
 
+from my_site.models import Page
 
 all_pages = [
 	{
@@ -73,7 +74,7 @@ all_pages = [
 		'lang': 'en',
 	},
 	{
-		'name': 'Inicio',
+		'name': 'inicio',
 		'title': 'Bienvenidos',
 		'text': 'Texto de bienvenida, Texto de bienvenida, Texto de bienvenida, Texto de bienvenida, Texto de bienvenida, Texto de bienvenida, Texto de bienvenida, ',
 		'lang': 'es',
@@ -90,6 +91,7 @@ all_pages = [
 		'text': 'Mi mi mi mi , Mi mi mi mi , Mi mi mi mi , Mi mi mi mi , Mi mi mi mi , Mi mi mi mi , Mi mi mi mi , Mi mi mi mi , ',
 		'lang': 'es',
 	},
+]
 
 for page in all_pages:
 	print("[#] Processing: {}".format(page['name']))
@@ -99,12 +101,11 @@ for page in all_pages:
 	new_page.save()
 	print("\t> {} saved".format(page['name']))
 
-"""
 
 
 """
 For new Activities:
-"""
+
 from my_site.models import Activity
 
 all_activities = [
@@ -135,6 +136,7 @@ for activity in all_activities:
     new_activity.save()
     print("\t> {} saved".format(activity['name']))
 
+"""
 
 
 
