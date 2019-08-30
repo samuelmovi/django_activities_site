@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" href="{% static 'my_site/css/style.css' %}">
-    <link rel="shortcut icon" type="image/png" href="{{MEDIA_URL}}/favicon.ico"/>
+    <link rel="shortcut icon" type="image/png" href="{% static 'my_site/favicon.png' %}"/>
     <style>
     </style>
     <script src="https://use.fontawesome.com/ba69b74f60.js"></script>
@@ -43,8 +43,8 @@
     </form>
         <br/>
     </div>
+  </div>
   {% endif %}
-</div>
 </div>
 <script type="text/javascript" src = "{% static 'my_site/js/script.js' %}"></script>
 </body>

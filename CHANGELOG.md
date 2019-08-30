@@ -9,3 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - make favicon in contact bar optional
 - add unit testing
 
+## 2019-08-30
+
+### Fixed
+- favicon not loading correctly
