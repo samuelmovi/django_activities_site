@@ -1,68 +1,20 @@
 $(document).ready(()=>{
 
     // contact bar
-    const contact-burger = $(".contact-burger")
-    contact-burger.on('click', function(){
-        $("#contact-bar").toggleClass("responsive");
-    })
-    /*
-    function fold_contact_buttons(){
-            $(".contact-bar").toggleClass("responsive");
-        }
-    */
-    function sticky_contact_bar() {
-        let offSet = contact_bar.offsetTop;
-        const bar = $("#contact-bar");
-        if (window.pageYOffset > offSet){
-            bar.addClass("sticky");
-        }
-        else{
-            bar.removeClass("sticky");
-        }
-    }
-
-    window.onscroll = function() {sticky_contact_bar(); };
+	var contactBurger =  $("#contact-burger");
+	var contactBar = $("#contact-bar");
+	contactBurger.click(function(){
+		contactBar.toggleClass("responsive");
+	});
 
     // carousel
-    photoIndex = 0;
-    function carousel() {
-      let i;
-      const x = $(".photo-slide");
-      for (i = 0; i < x.length; i++) {
-        x[i].css("display", "none");
-      }
-      photoIndex++;
-      if (photoIndex > x.length) {photoIndex = 1}
-      x[photoIndex-1].css("display", "block");
-      //x[photoIndex-1].style.display = "block";
-      setTimeout(carousel, 2500); // Change image every 2.5 seconds
-    }
-    carousel();
 
     // navbar
-    function fold_nav_buttons(){
-        const x = $("#navbar");
-        x.toggleClass("responsive");
-    }
-    /*
-            if (x.className === "navbar") {
-            x.className += " responsive";
-        } else {
-            x.className = "navbar";
-        }
-    */
+	var navbarBurger =  $("#navbar-burger");
+	var navBar = $("#navbar");
+	navbarBurger.click(function(){
+		navBar.toggleClass("responsive");
+	});
 
-    // content
 
-    // date picker in form
-    $(function() {
-        $( ".datepicker" ).datepicker({
-          changeMonth: true,
-          changeYear: true,
-          yearRange: "2019:2025",
-          // You can put more options here.
-
-        });
-      });
-
-})
+});
