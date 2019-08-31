@@ -75,6 +75,7 @@ python manage.py migrate
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 ```
+- Add to TEMPLATES.OPTIONS.context_processors in `settings.py`: `'django.template.context_processors.media',`
 - Append  to the end of urlpatterns in `project_name/urls.py`:
 ```
 from django.conf.urls.static import static

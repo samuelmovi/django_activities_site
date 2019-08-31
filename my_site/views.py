@@ -59,9 +59,10 @@ class PageView(View):
     cards = []
     
     def get(self, request, name):
+        print("[#] Loading requested page: {}".format(name))
         try:
             if request.META['HTTP_ACCEPT_LANGUAGE'].startswith('es'):
-                print("[#] All activities ES: {}".format(len(self.all_activities_ES)))
+                # print("[#] All activities ES: {}".format(len(self.all_activities_ES)))
                 page = self.all_pages_ES.get(name=name)
                 all_photos = CarouselPhoto.objects.filter(activity=page.id)
                 context = {
@@ -75,7 +76,7 @@ class PageView(View):
                 }
                 self.cards = self.cards_ES
             else:
-                print("[#] All activities EN: {}".format(len(self.all_activities_EN)))
+                # print("[#] All activities EN: {}".format(len(self.all_activities_EN)))
                 page = self.all_pages_EN.get(name=name)
                 all_photos = CarouselPhoto.objects.filter(activity=page.id)
                 context = {
@@ -93,10 +94,10 @@ class PageView(View):
             if name in ('home', 'inicio'):
                 context['home'] = True
                 excerpts = Excerpt.objects.filter(name__in=self.cards)
-                print("[#] Excerpts: {}".format(len(excerpts)))
+                print("\t> Excerpts: {}".format(len(excerpts)))
                 context['excerpts'] = excerpts
-            print("[#] Activities: {}".format(len(context['all_activities'])))
-            print("[#] Pages: {}".format(len(context['all_pages'])))
+            # print("[#] Activities: {}".format(len(context['all_activities'])))
+            # print("[#] Pages: {}".format(len(context['all_pages'])))
             return render(request, 'my_site/page.html', context)
         except Exception as e:
             logger.exception(e)

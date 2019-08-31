@@ -1,7 +1,8 @@
 {% load staticfiles %}
 <div id="contact-bar" class="contact-bar" >
 	<div class="contact-bar w3-bar">
-		<a href="/" class="w3-bar-item show-me" ><img class="w3-image" src="{% static 'my_site/favicon.png' %}"/></a>
+		<a href="/" class="w3-bar-item show-me"
+		><img class="w3-image" src="{{MEDIA_URL}}/favicon.png"/></a>
 	{% if all_contacts %}
 		{% for contact in all_contacts %}
 		<a href="{{contact.link}}" class="w3-bar-item  w3-hover-cyan" target="_blank" title="{{contact.text}}"><i class="{{contact.icon}}"></i></a>
