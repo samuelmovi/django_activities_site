@@ -1,65 +1,42 @@
-<!-- Contact Bar -->
-<!-- responsive contact bar folding -->
-function fold_contact_buttons(){
-	var x = document.getElementById("contact-bar");
-	if (x.className === "contact-bar") {
-		x.className += " responsive";
-	} else {
-		x.className = "contact-bar";
-	}
-}
+$(document).ready(()=>{
+    // responsive top bar
+	var contactBurger =  $("#contact-burger");
+	var contactBar = $("#contact-bar");
+	contactBurger.click(function(){
+		contactBar.toggleClass("responsive");
+	});
+	// responsive navbar
+	var navbarBurger =  $("#navbar-burger");
+	var navBar = $("#navbar");
+	navbarBurger.click(function(){
+		navBar.toggleClass("responsive");
+	});
+    // photo carousel
+    var allPhotos = $("#carousel").find('.carousel-photo');
+    var photoIndex = 0;
+    function slidePhotos(){
+        var i;
+        for (i = 0; i < allPhotos.length; i++) {
+        allPhotos.eq(i).hide();
+        }
+        photoIndex++;
+        if (photoIndex > allPhotos.length) {
+        photoIndex = 0;
+        }
+        allPhotos.eq(photoIndex-1).show();
+        setTimeout(slidePhotos, 2000); // Change image every 2.5 seconds
+    }
+    slidePhotos();
 
-<!-- sticky contact bar -->
-function sticky_topbar() {
-  var contact_bar = document.getElementById("ishow-contact-bar");
-  var offSet = contact_bar.offsetTop;
-  if (window.pageYOffset > offSet) {
-    contact_bar.classList.add("sticky")
-  } else {
-    contact_bar.classList.remove("sticky");
-  }
-}
+    // date picker in form
+    $(function() {
+        $( ".datepicker" ).datepicker({
+          changeMonth: true,
+          changeYear: true,
+          yearRange: "2019:2025",
+          // You can put more options here.
 
-window.onscroll = function() {sticky_topbar(); };
+        });
+      });
 
-<!-- iShow Navbar -->
-<!-- responsive navbar folding -->
-function fold_nav_buttons(){
-	var x = document.getElementById("navbar");
-
-	if (x.className === "navbar") {
-		x.className += " responsive";
-	} else {
-		x.className = "navbar";
-	}
-}
-
-
-<!-- Carousel -->
-var myIndex = 0;
-carousel();
-
-<!-- iShow Super Banner -->
-<!-- carousel script -->
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("photo-slide");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}
-  x[myIndex-1].style.display = "block";
-  setTimeout(carousel, 2500); // Change image every 2.5 seconds
-}
-
-// date picker in form
-$(function() {
-    $( ".datepicker" ).datepicker({
-      changeMonth: true,
-      changeYear: true,
-      yearRange: "2019:2025",
-      // You can put more options here.
-
-    });
-  });
+});

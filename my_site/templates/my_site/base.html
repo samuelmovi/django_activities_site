@@ -20,7 +20,9 @@
   <!-- CONTACT BAR -->
   {% include 'my_site/contact_bar.html' %}
   <!-- BANNER -->
-  {% include 'my_site/carousel.html' %}
+  {% if all_photos %}
+    {% include 'my_site/carousel.html' %}
+  {% endif %}
   <!-- NAVIGATION BAR -->
   {% include 'my_site/navbar.html' %}
   <div id="content" class="w3-container w3-white w3-center" >
@@ -46,6 +48,10 @@
   </div>
   {% endif %}
 </div>
+<audio id="chime" >
+   <source src="{{MEDIA_URL}}chime.mp3" type="audio/mp3"/>
+</audio>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src = "{% static 'my_site/js/script.js' %}"></script>
 </body>
 </html>

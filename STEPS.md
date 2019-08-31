@@ -68,6 +68,22 @@ python manage.py migrate
 ## STATIC FILES
 - In `my_site/` create folder `static/my_site/`
 
+## MEDIA FILES
+- create folder for media files `media/`
+- Add to `settings.py`:
+```
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+```
+- Add to TEMPLATES.OPTIONS.context_processors in `settings.py`: `'django.template.context_processors.media',`
+- Append  to the end of urlpatterns in `project_name/urls.py`:
+```
+from django.conf.urls.static import static
+from django.conf import settings
+
+urlpatterns = [ ... ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+```
+
 ## INITIALIZE
 Stop the database container if still running (`sudo docker stop django-db`), and execute `./init.sh`
 
