@@ -89,6 +89,7 @@ html,body
 #carousel-logo {
   height: auto;
   width: 25%;
+  margin: 25px;
 }
 
 /* stretch out images in the carousel */

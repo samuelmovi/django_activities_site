@@ -2,14 +2,14 @@
 <div id="banner" class="w3-bar w3-white" >
     <div id="carousel" class="w3-display-container">
         {% for photo in all_photos %}
-          <div class="photo-slide">
-            <img class="w3-image  w3-animate-left stretch" src="{{ photo.image.url }}">
-          </div>
+        <div class="carousel-photo">
+            <img class="w3-image  w3-animate-left stretch" src="{{ photo.image.url }}"/>
+        </div>
         {% endfor %}
           <div id="carousel-logo" class="w3-display-topleft">
-        <a href="{% url 'my_site:base' %}">
-          <img src="{{ MEDIA_URL }}/logo.png" class="w3-image" />
-        </a>
-      </div>
+            <a href="{% url 'my_site:base' %}">
+              <img src="{{ MEDIA_URL }}/logo.png" class="w3-image" />
+            </a>
+          </div>
     </div>
 </div>
