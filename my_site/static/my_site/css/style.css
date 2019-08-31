@@ -8,8 +8,9 @@ html,body
     overflow-x: hidden; 
 }
  */
-#page{
-
+ * {
+  margin: 0px;
+  padding: 0px;
 }
 
 #error {
@@ -120,13 +121,19 @@ html,body
 
 /*********** RESPONSIVE STUFF **************/
 @media screen and (max-width: 700px) {
-  .contact-bar a:not(.show-me) {display: none;}
+
+  /* CONTACT-BAR*/
+  .contact-bar a:not(.show-me) {
+    display: none;
+  }
   .contact-bar a.contact-burger {
     float: right;
     display: block;
   }
 
-    .contact-bar.responsive {position: relative;}
+  .contact-bar.responsive {
+    position: relative;
+  }
   .contact-bar.responsive .contact-burger {
     position: absolute;
     right: 0;
@@ -138,14 +145,20 @@ html,body
     text-align: left;
   }
 
-  .navbar a:not(.show-me) {display: none;}
-  .navbar .navbar-item:not(.show-me) {display: none;}
+  /* NAVBAR */
+  .navbar a:not(.show-me) {
+    display: none;
+  }
+  .navbar .navbar-item:not(.show-me) {
+    display: none;
+  }
   .navbar a.navbar-burger {
     float: right;
     display: block;
   }
-
-   .navbar.responsive {position: relative;}
+  .navbar.responsive {
+    position: relative;
+  }
   .navbar.responsive .navbar-burger {
     position: absolute;
     right: 0;

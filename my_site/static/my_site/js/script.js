@@ -1,3 +1,5 @@
+
+
 <!-- Contact Bar -->
 <!-- responsive contact bar folding -->
 function fold_contact_buttons(){
