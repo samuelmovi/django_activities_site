@@ -64,7 +64,7 @@ class PageView(View):
             if request.META['HTTP_ACCEPT_LANGUAGE'].startswith('es'):
                 # print("[#] All activities ES: {}".format(len(self.all_activities_ES)))
                 page = self.all_pages_ES.get(name=name)
-                all_photos = CarouselPhoto.objects.filter(activity=page.id)
+                all_photos = CarouselPhoto.objects.filter(page=page.id)
                 context = {
                     'page_title': page.title,
                     'all_contacts': self.all_contacts,
@@ -78,7 +78,7 @@ class PageView(View):
             else:
                 # print("[#] All activities EN: {}".format(len(self.all_activities_EN)))
                 page = self.all_pages_EN.get(name=name)
-                all_photos = CarouselPhoto.objects.filter(activity=page.id)
+                all_photos = CarouselPhoto.objects.filter(page=page.id)
                 context = {
                     'page_title': page.title,
                     'all_contacts': self.all_contacts,
@@ -98,6 +98,7 @@ class PageView(View):
                 context['excerpts'] = excerpts
             # print("[#] Activities: {}".format(len(context['all_activities'])))
             # print("[#] Pages: {}".format(len(context['all_pages'])))
+            print("\t> Photos: {}".format(len(context['all_photos'])))
             return render(request, 'my_site/page.html', context)
         except Exception as e:
             logger.exception(e)
