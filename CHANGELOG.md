@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add unit testing
 - refactor js code to jquery
 
+## 2019-08-21
+### Added
+- Media folder, missing from previous iteration
 
 ## 2019-08-30
 ### Fixed
