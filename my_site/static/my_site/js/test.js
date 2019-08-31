@@ -1,19 +1,18 @@
-$(document).ready(function(){
+$(document).ready(()=>{
 
     // contact bar
     const contact-burger = $(".contact-burger")
-    contact-burger.click( function()=>{
-        $(".contact-bar").toggleClass("responsive");
+    contact-burger.on('click', function(){
+        $("#contact-bar").toggleClass("responsive");
     })
-
     /*
     function fold_contact_buttons(){
-        $("#contact-bar").toggle("responsive");
-    }
+            $(".contact-bar").toggleClass("responsive");
+        }
     */
     function sticky_contact_bar() {
         let offSet = contact_bar.offsetTop;
-        const bar = $("#ishow-contact-bar");
+        const bar = $("#contact-bar");
         if (window.pageYOffset > offSet){
             bar.addClass("sticky");
         }
@@ -43,16 +42,15 @@ $(document).ready(function(){
     // navbar
     function fold_nav_buttons(){
         const x = $("#navbar");
-        if ("navbar" in x.attr("class")){
-            x.addClass("responsive");
-        }
-
-        if (x.className === "navbar") {
+        x.toggleClass("responsive");
+    }
+    /*
+            if (x.className === "navbar") {
             x.className += " responsive";
         } else {
             x.className = "navbar";
         }
-    }
+    */
 
     // content
 

@@ -126,7 +126,7 @@ html,body
   .contact-bar a:not(.show-me) {
     display: none;
   }
-  .contact-bar a.contact-burger {
+  .contact-bar .contact-burger {
     float: right;
     display: block;
   }
@@ -145,7 +145,7 @@ html,body
     text-align: left;
   }
 
-  /* NAVBAR */
+  /* NAVBAR*/
   .navbar a:not(.show-me) {
     display: none;
   }
